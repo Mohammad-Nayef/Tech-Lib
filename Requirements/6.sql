@@ -36,4 +36,4 @@ END
 GO
 
 --Example with a loan with due_date = 2023-08-16
-SELECT dbo.fn_CalculateOverdueFees (107)
+SELECT dbo.fn_CalculateOverdueFees (107) AS [Overdue fees]
