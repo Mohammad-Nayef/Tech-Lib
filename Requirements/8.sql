@@ -7,5 +7,3 @@ JOIN borrowers ON loans.borrower_id = borrowers.borrower_id
 WHERE due_date < date_returned AND DATEDIFF(DAY, due_date, date_returned) > 30
 	OR
 	DATEDIFF(DAY, due_date, GETDATE()) > 30 AND date_returned IS NULL
-
---DATEDIFF(DAY, due_date, date_returned)
