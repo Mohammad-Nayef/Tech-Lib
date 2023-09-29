@@ -16,7 +16,7 @@ AS BEGIN
 		first_name, last_name FROM loans
 	JOIN books ON loans.book_id = books.book_id
 	JOIN borrowers ON loans.borrower_id = borrowers.borrower_id
-	WHERE date_borrowed >= @StartDate AND date_borrowed <= @EndDate
+	WHERE date_borrowed BETWEEN @StartDate AND @EndDate
 	ORDER BY title
 END
 

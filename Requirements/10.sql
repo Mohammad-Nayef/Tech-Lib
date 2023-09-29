@@ -31,7 +31,7 @@ RETURN
 		FROM loans
 		JOIN books ON loans.book_id = books.book_id
 	) AS genreWithAge
-	WHERE Age >= @min_range AND Age <= @max_range
+	WHERE Age BETWEEN @min_range AND @max_range
 	GROUP BY genre
 GO
 
