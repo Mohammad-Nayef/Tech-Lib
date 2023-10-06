@@ -6,11 +6,7 @@
 --				  If existing, return an error message.
 --	Return: The new BorrowerID or an error message.
 
-DROP PROCEDURE IF EXISTS sp_AddNewBorrower;
-
-GO 
-
-CREATE PROCEDURE sp_AddNewBorrower (@first_name VARCHAR(20), @last_name VARCHAR(20),
+CREATE OR ALTER PROCEDURE sp_AddNewBorrower (@first_name VARCHAR(20), @last_name VARCHAR(20),
 	@email VARCHAR(320), @date_of_birth DATE, @membership_date DATE)
 AS BEGIN 
 	IF (@email IN (SELECT email FROM borrowers))

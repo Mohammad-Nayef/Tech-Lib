@@ -2,11 +2,7 @@
 --	Determine the preferred genre of different age groups of borrowers. 
 --	(Groups are (0,10), (11,20), (21,30)…)
 
-DROP FUNCTION IF EXISTS fn_BorrowerAge
-
-GO
-
-CREATE FUNCTION fn_BorrowerAge (@BorrowerID INT)
+CREATE OR ALTER FUNCTION fn_BorrowerAge (@BorrowerID INT)
 RETURNS INT AS
 BEGIN 
 	RETURN (
@@ -18,11 +14,7 @@ END
 
 GO
 
-DROP FUNCTION IF EXISTS fn_SelectByAgeRange
-
-GO
-
-CREATE FUNCTION fn_SelectByAgeRange (@min_range INT, @max_range INT)
+CREATE OR ALTER FUNCTION fn_SelectByAgeRange (@min_range INT, @max_range INT)
 RETURNS TABLE AS
 RETURN 
 	SELECT genre, COUNT(*) as [Number of borrowings for the genre]

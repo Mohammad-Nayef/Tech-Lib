@@ -11,11 +11,7 @@ CREATE TABLE BookStatusAuditLog (
 
 GO
 
-DROP TRIGGER IF EXISTS BookStatusChangeTrigger
-
-GO
-
-CREATE TRIGGER BookStatusChangeTrigger
+CREATE OR ALTER TRIGGER BookStatusChangeTrigger
 ON books
 AFTER UPDATE
 AS IF (UPDATE (current_status))

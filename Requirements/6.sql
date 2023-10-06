@@ -5,11 +5,7 @@
 --    - Implementation: Charge fees based on overdue days: $1/day for up to 30 days, $2/day after.
 --    - Return: Overdue fee for the LoanID.
 
-DROP FUNCTION IF EXISTS fn_CalculateOverdueDays, fn_CalculateOverdueFees
-
-GO
-
-CREATE FUNCTION fn_CalculateOverdueDays (@loanID INT)
+CREATE OR ALTER FUNCTION fn_CalculateOverdueDays (@loanID INT)
 RETURNS INT AS
 BEGIN
 	RETURN (
@@ -20,7 +16,7 @@ END
 
 GO
 
-CREATE FUNCTION fn_CalculateOverdueFees (@loanID INT)
+CREATE OR ALTER FUNCTION fn_CalculateOverdueFees (@loanID INT)
 RETURNS INT AS
 BEGIN
 	DECLARE @overdue_fees INT

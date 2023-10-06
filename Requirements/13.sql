@@ -14,11 +14,9 @@ CREATE TABLE #borrowers_with_overdue_books (
 	email VARCHAR(320),
 )
 
-DROP PROCEDURE IF EXISTS sp_OverdueBorrowings
-
 GO
 
-CREATE PROCEDURE sp_OverdueBorrowings
+CREATE OR ALTER PROCEDURE sp_OverdueBorrowings
 AS BEGIN
 	INSERT INTO #borrowers_with_overdue_books
 	SELECT borrowers.borrower_id, first_name, last_name, email

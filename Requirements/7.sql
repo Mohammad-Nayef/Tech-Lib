@@ -5,11 +5,7 @@
 --    - Implementation: Count the number of times the book has been issued.
 --    - Return: Borrowing count of the book.
 
-DROP FUNCTION IF EXISTS fn_BookBorrowingFrequency
-
-GO
-
-CREATE FUNCTION fn_BookBorrowingFrequency (@BookID INT)
+CREATE OR ALTER FUNCTION fn_BookBorrowingFrequency (@BookID INT)
 RETURNS INT AS 
 BEGIN 
 	RETURN (

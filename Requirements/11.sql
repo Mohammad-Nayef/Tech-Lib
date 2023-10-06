@@ -6,11 +6,7 @@
 --			with details like borrower name and borrowing date.
 --    - Return: Tabulated report of borrowed books.
 
-DROP PROCEDURE IF EXISTS sp_BorrowedBooksReport
-
-GO
-
-CREATE PROCEDURE sp_BorrowedBooksReport (@StartDate DATE, @EndDate DATE)
+CREATE OR ALTER PROCEDURE sp_BorrowedBooksReport (@StartDate DATE, @EndDate DATE)
 AS BEGIN 
 	SELECT books.book_id, title, author, date_borrowed, borrowers.borrower_id, 
 		first_name, last_name FROM loans
